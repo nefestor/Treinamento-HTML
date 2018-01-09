@@ -1,0 +1,23 @@
+body {
+	font-family: 'Raleway', 'Droid+Serif', sans-serif;
+}
+div {
+	width: 800px;
+	text-align: center;
+	margin: auto;
+}
+p {
+	text-align: left;
+	color: rgba(70, 70, 70, 1.0);
+}
+h1 {
+	color: rgba(156, 156, 156, 0.7);
+	font-style: italic;
+	font-size:20px;
+}
+a {
+	color: black;
+}
+img {
+width: 90%;
+}
