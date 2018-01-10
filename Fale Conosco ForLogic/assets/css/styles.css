@@ -1,0 +1,39 @@
+body {
+	box-sizing: border-box;
+	width: 100%;
+}
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+    	"header header header"
+    	"imagem imagem imagem"
+    	"form form trabalhe-conosco"
+   		"footer footer footer";
+}
+.header {
+	display: inline-grid;
+	grid-area: header;
+	justify-content: end;
+	border: 1px blue solid;
+}
+.header li {
+	display: inline-grid;
+	justify-self: end;
+}
+.imagem {
+	grid-area: imagem;
+	background-image: url('../images/imagem-top.png');
+	background-repeat: no-repeat;
+	height: 300px;
+}
+.form {
+	grid-area: form;
+}
+.trabalhe-conosco {
+	grid-area: trabalhe-conosco;
+}
+.footer {
+	grid-area:footer;
+}
