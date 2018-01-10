@@ -26,10 +26,21 @@ body {
 	grid-area: imagem;
 	background-image: url('../images/imagem-top.png');
 	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
 	height: 300px;
+	border: 1px red solid;
+}
+.imagem > div > h2 {
+	padding-top: 125px;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 500;
+	color: white;
 }
 .form {
 	grid-area: form;
+	border: 1px solid yellow;
 }
 .trabalhe-conosco {
 	grid-area: trabalhe-conosco;
