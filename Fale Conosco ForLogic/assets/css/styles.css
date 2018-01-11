@@ -2,6 +2,7 @@ body {
 	width: 100%;
 	font-family: Helvetica;
 	font-size: 14px;
+	background-color: #f9f9f9;
 }
 
 .container {
@@ -59,8 +60,26 @@ body {
 }
 .form {
 	grid-area: form;
-	border: 1px solid yellow;
+	display: flex;
+	padding-left: 50px;
+	flex-direction: column;
 }
+.box > form > li {
+	display: inline-block;
+	width: 49%;
+	padding-bottom: 10px;
+}
+.box > form > li > label {
+	font-family: Proxima Nova;
+	font-size: 15px;
+	font-weight: 700;
+	margin-bottom: 5px !important;
+	color: #999;
+}
+.w100 {
+	width: 100% !important;
+}
+
 .trabalhe-conosco {
 	grid-area: trabalhe-conosco;
 	border: 1px solid green;
@@ -84,4 +103,18 @@ body {
 }
 .form, .trabalhe-conosco {
 	margin-top: 50px;
+}
+
+.box > form > li > label > input {
+	display: block;
+	width: 97%;
+	height: 30px;
+	font-size: 15px;
+	color: #555;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 0;
+}
+#mensagem {
+	height: 100px;
 }
