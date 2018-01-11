@@ -44,6 +44,7 @@ body {
 	letter-spacing: -1px;
 }
 .imagem {
+	margin-top: 91px;
 	grid-area: imagem;
 	background-image: url('../images/imagem-top.png');
 	background-repeat: no-repeat;
@@ -135,7 +136,6 @@ body {
 	padding-left: 100px;
 	padding-bottom: 30px;
 	font-weight: 500;
-	width: 100%;
 }
 .fb {
 
@@ -204,13 +204,28 @@ body {
 .footer {
 	background-color: #1a1a1a;
 }
+.infos {
+	width: 33%;
+	padding-top: 20px;
+}
 .infos > img {
-	width: 20%;
+	display: block;
+	width: 60%;
 }
 .infos > p, .instagram > h5 {
 	color: #888;
+	padding: 20px 0;
 }
 .grupo > h6 {
 	color: #f9f9f9;
 	text-align: center;
+
+}
+.final {
+	padding: 40px 0px 60px 100px;
+	display: flex;
+}
+.grupo {
+	padding: 20px 0;
+	background-color: #000;
 }
