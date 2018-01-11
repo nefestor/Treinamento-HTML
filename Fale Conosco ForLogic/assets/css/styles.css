@@ -15,10 +15,13 @@ body {
    		"footer footer footer";
 }
 .header {
+	width: 100%;
 	grid-area: header;
 	text-transform: uppercase;
 	background-color: #f8f8f8;
 	height: 91px;
+	border: 1px solid #e7e7e7;
+	position: fixed;
 }
 .header :not(img) {
 	text-align: center;
@@ -60,11 +63,25 @@ body {
 }
 .trabalhe-conosco {
 	grid-area: trabalhe-conosco;
+	border: 1px solid green;
 }
 .footer {
 	grid-area:footer;
+	margin-top: 50px;
+	border:  1px solid black;
 }
 .box:nth-child(1) > a > img {
 	margin-top: 25px;
 	margin-left: 70px;
+}
+.form > div > h2 {
+	color: #14c5fe;
+	font-size: 50px;
+	line-height: 35px;
+	padding-top: 50px;
+	padding-left: 50px;
+	padding-bottom: 30px;
+}
+.form, .trabalhe-conosco {
+	margin-top: 50px;
 }
