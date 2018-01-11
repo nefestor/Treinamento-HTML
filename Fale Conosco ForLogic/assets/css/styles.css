@@ -201,3 +201,16 @@ body {
 .trabalhe-conosco > div:nth-child(1) {
 	padding-top: 55px;
 }
+.footer {
+	background-color: #1a1a1a;
+}
+.infos > img {
+	width: 20%;
+}
+.infos > p, .instagram > h5 {
+	color: #888;
+}
+.grupo > h6 {
+	color: #f9f9f9;
+	text-align: center;
+}
