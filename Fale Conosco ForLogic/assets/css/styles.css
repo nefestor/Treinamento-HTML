@@ -105,7 +105,7 @@ body {
 	margin-top: 50px;
 }
 
-.box > form > li > label > input {
+.box > form > li > label > input, .box > form > li > label > select {
 	display: block;
 	width: 97%;
 	height: 30px;
@@ -114,7 +114,45 @@ body {
 	background-image: none;
 	border: 1px solid #ccc;
 	border-radius: 0;
+	margin-top: 10px;
 }
 #mensagem {
 	height: 100px;
+}
+
+#form-button {
+	background-color: #07b5dd;
+	padding: 15px 50px;
+	color: #fff;
+	font-size: 25px;
+	background-image: none;
+	border: 1px solid #ccc;
+}
+.trabalhe-conosco > div > h4 {
+	font-family: Helvetica Neue Thin;
+	font-size: 35px;
+	color: #666;
+	margin-top: 35px;
+	padding-bottom: 45px;
+	font-weight: 500;
+	width: 100%;
+}
+.fb {
+
+	background-image: url('../images/icons/facebook.png');
+}
+.tw {
+	background-image: url('../images/icons/twitter.png');
+}
+.gg {
+	background-image: url('../images/icons/google+.png');
+}
+.li {
+	background-image: url('../images/icons/linkedin.png');
+}
+.icon {
+	width: 50px;
+	height: 50px;
+	float: left;
+	background-repeat: no-repeat;
 }
