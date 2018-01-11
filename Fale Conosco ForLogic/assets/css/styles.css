@@ -15,6 +15,13 @@ body {
     	"form form trabalhe-conosco"
    		"footer footer footer";
 }
+a:link {
+	text-decoration:none;
+	color: inherit;
+}
+a:visited {
+    color: inherit;
+}
 .header {
 	width: 100%;
 	grid-area: header;
@@ -44,7 +51,7 @@ body {
 	letter-spacing: -1px;
 }
 .imagem {
-	margin-top: 91px;
+	margin-top: 93px;
 	grid-area: imagem;
 	background-image: url('../images/imagem-top.png');
 	background-repeat: no-repeat;
