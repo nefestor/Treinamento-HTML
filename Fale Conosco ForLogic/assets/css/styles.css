@@ -51,11 +51,10 @@ a:visited {
 	margin-right: 15px;
 	letter-spacing: -1px;
 }
-.box:nth-child(1) > nav > ul > li:hover {
+.box:nth-child(1) > nav > ul > li:not(#contratando):hover {
 	padding-top: 1px;
 	border-bottom: 1px solid gray;
 	color: #8a8a8a;
-
 }
 .imagem {
 	margin-top: 91px;
