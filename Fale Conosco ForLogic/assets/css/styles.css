@@ -4,7 +4,6 @@ body {
 	font-size: 14px;
 	background-color: #f9f9f9;
 }
-
 .container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -84,7 +83,6 @@ a:visited {
 	padding-bottom: 10px;
 }
 .box > form > li > label {
-	font-family: Proxima Nova;
 	font-size: 15px;
 	font-weight: 700;
 	margin-bottom: 5px !important;
@@ -93,7 +91,6 @@ a:visited {
 .w100 {
 	width: 100% !important;
 }
-
 .trabalhe-conosco {
 	grid-area: trabalhe-conosco;
 }
@@ -117,7 +114,6 @@ a:visited {
 .form, .trabalhe-conosco {
 	padding-top: 45px;
 }
-
 .box > form > li > label > input, .box > form > li > label > select {
 	display: block;
 	width: 97%;
@@ -132,7 +128,6 @@ a:visited {
 #mensagem {
 	height: 100px;
 }
-
 #form-button {
 	background-color: #07b5dd;
 	padding: 15px 50px;
@@ -189,7 +184,7 @@ a:visited {
 	padding-bottom: 10px;
 	padding-left: 30px;
 }
-.trabalhe-conosco > div:nth-child(3) > a >button {
+.trabalhe-conosco > div:nth-child(3) > a > button {
 	display: block;
 	margin-left: 100px;
 	background-image: none;
