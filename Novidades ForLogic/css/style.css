@@ -1,0 +1,18 @@
+.header {
+	border: 1px black solid;
+}
+.imagem {
+	border: 1px blue solid;
+}
+.ultimas {
+	border: 1px green solid;
+}
+.anteriores {
+	border: 1px yellow solid;
+}
+.footer {
+	border: 1px gray solid;
+}
+.col {
+	border: 1px red solid;
+}
