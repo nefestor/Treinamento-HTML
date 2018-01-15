@@ -170,6 +170,18 @@ svg:hover {
 .li {
 	background-image: url('../images/icons/linkedin.png');
 }
+.fb:hover {
+    background-image: url('../images/icons/facebook_hover.png');
+}
+.tw:hover {
+	background-image: url('../images/icons/twitte_hover.png');
+}
+.gg:hover {
+	background-image: url('../images/icons/google+_hover.png');
+}
+.li:hover {
+	background-image: url('../images/icons/linkedin_hover.png');
+}
 .icon {
 	width: 50px;
 	height: 50px;
