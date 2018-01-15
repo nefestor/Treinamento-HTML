@@ -16,3 +16,14 @@
 .col {
 	border: 1px red solid;
 }
+.header {
+	width: 100%;
+}
+.centered {
+    margin: 0 auto !important;
+    float: none !important;
+}
+#navbarNavAltMarkup > div {
+	display: flex;
+    align-items: center;
+}
