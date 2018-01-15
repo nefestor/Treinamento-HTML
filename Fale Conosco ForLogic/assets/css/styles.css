@@ -151,14 +151,26 @@ a:visited {
 .fb {
 	background-image: url('../images/icons/facebook.png');
 }
+.fb:hover {
+    background-image: url('../images/icons/facebook_hover.png');
+}
 .tw {
 	background-image: url('../images/icons/twitter.png');
+}
+.tw:hover {
+	background-image: url('../images/icons/twitte_hover.png');
 }
 .gg {
 	background-image: url('../images/icons/google+.png');
 }
+.gg:hover {
+	background-image: url('../images/icons/google+_hover.png');
+}
 .li {
 	background-image: url('../images/icons/linkedin.png');
+}
+.li:hover {
+	background-image: url('../images/icons/linkedin_hover.png');
 }
 .icon {
 	width: 50px;
