@@ -1,6 +1,7 @@
 body {
 	font-family: Helvetica;
 	font-size: 14px;
+	background-color: #f8f8f8;
 }
 .imagem {
 	padding: 80px 4% 80px 4%;
@@ -43,6 +44,7 @@ body {
 }
 .nav-header {
     padding: 0px;
+    border-bottom: 1px solid #e7e7e7;
 }
 #navbarNavAltMarkup > div > a {
 	color: #777;
@@ -88,7 +90,7 @@ body {
 	justify-content: flex-end;
 	border-bottom: 5px solid #16c5fe;
 }
-.twitter {
+.twitter{
 	height: 250px;
 	overflow: auto;
 	width: 100%;
@@ -125,20 +127,21 @@ body {
 	color: #8c8c8c;
 	font-size: 24px;
 	line-height: 29px;
-	font-weight: 500;
+	font-weight: 600;
 }
 .ultimas p {
 	color: #8c8c8c;
 	font-size: 14px;
 	line-height: 23px;
-	font-weight: 500;
+	font-weight: 600;
 	margin-bottom: 22px;
+	letter-spacing: -1px;
 }
 .p-img {
 	color: #fff !important;
 	font-size: 18px !important;
 	padding: 12px 30px;
-	width: 50%;
+	width: 45%;
 	background-color: #62d8fe;
 	margin-bottom: 0px !important;
 }
@@ -146,4 +149,30 @@ body {
 	margin-bottom: 0px !important;
 	font-weight: 800 !important;
 	font-size: 12px !important;
+}
+.u-floatLeft {
+	float: left !important;
+}
+.u-floatRight {
+	float: right !important;
+}
+.rodape-twitter {
+	padding: 15px 15px 30px 15px;
+	background-color: #fff;
+	width: 100%;
+}
+.feed-twitter {
+	padding-right: 0px;
+    padding-left: 15px;
+}
+.a-noticias:hover h3, .a-noticias:hover p {
+	color: #62d8fe;
+	transition: 0.1s;
+}
+.a-noticias:link {
+	text-decoration: none;
+}
+.noticia {
+	border-bottom: 1px solid #9e9898;
+	margin-bottom: 40px;
 }
