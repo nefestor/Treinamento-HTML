@@ -68,7 +68,8 @@ body {
     text-decoration: underline;
 }
 .header {
-position: fixed;
+	position: fixed;
+    z-index: 10;
 }
 .pesquisa > div, .pesquisa > div > input {
 	width: 100%;
@@ -77,4 +78,10 @@ position: fixed;
 	color: #555;
     font-size: 15px;
     line-height: 1.42857143;
+}
+.box-imagem {
+	background-image: url('../images/novidades/novidades-1.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 300px;
 }
