@@ -15,7 +15,6 @@ body {
 .anteriores {
 	padding-left: 4%;
     padding-right: 4%;
-	border: 1px yellow solid;
 }
 .footer {
 	bottom: 0px;
@@ -211,4 +210,7 @@ body {
     line-height: 33px;
     margin-bottom: 15px;
     text-align: left;
+}
+.box-anteriores {
+	height: 200px;
 }
