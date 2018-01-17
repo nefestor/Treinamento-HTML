@@ -18,7 +18,6 @@ body {
 }
 .footer {
 	bottom: 0px;
-	border: 1px gray solid;
 }
 .col {
 	border: 1px red solid;
@@ -164,20 +163,58 @@ body {
 	padding-right: 0px;
     padding-left: 15px;
 }
-.a-noticias:hover h3, .a-noticias:hover p {
+.footer {
+	background-color: #1a1a1a;
+}
+.infos {
+	width: 33%;
+	padding-top: 20px;
+}
+.infos > img {
+	display: block;
+	width: 60%;
+}
+.infos > p, .instagram > h5 {
+	color: #888;
+	font-size: 16px;
+	padding: 20px 0;
+}
+.grupo > h6 {
+	color: #f9f9f9;
+	text-align: center;
+}
+.final {
+	padding: 40px 0px 60px 100px;
+	display: flex;
+}
+.grupo {
+	padding: 20px 0;
+	background-color: #000;
+}
+.instagram > a > img {
+	padding-right: 10px;
+}
+.infos > p {
+	font-size: 16px;
+	font-weight: 400;
+	font-style: normal;
+	letter-spacing: 0px;
+	line-height: 22px;
+	text-align: left;
+}
+.final {
+	background-color: #222;
+}
+/* box anteriores */
+.box-anteriores:hover p {
 	color: #62d8fe;
 	transition: 0.1s;
 }
-.a-noticias:link {
-	text-decoration: none;
+.box-anteriores {
+	height: 150px;
 }
-.noticia {
-	border-bottom: 1px solid #9e9898;
-	margin-bottom: 40px;
-}
-.a-anteriores > img {
-	width: 30%;
-	border-bottom: 5px solid #16c5fe;
+.anteriores {
+	border-bottom: 1px solid black;
 }
 .princ {
 	float: right;
@@ -190,27 +227,153 @@ body {
 }
 .sec {
 	width: 70%;
-	margin-left: auto;
+	float: right;
 	padding-left: 20px;
 	display: block;
 	font-weight: 500;
 	font-size:14px;
 	color: #8c8c8c;
 }
-.h2-ant {
-	margin-top: 30px;
-    margin-bottom: 30px;
+.a-noticias:hover h3, .a-noticias:hover p {
+	color: #62d8fe;
+	transition: 0.1s;
 }
-.h2-ant > h2 {
-	color: #68adce;
-    font-size: 35px;
+.a-noticias:link, .a-anteriores:link {
+	text-decoration: none;
+}
+.noticia {
+	border-bottom: 1px solid #9e9898;
+	margin-bottom: 40px;
+}
+.img-ant {
+	width: 30%;
+	height: auto;
+}
+.box-ant {
+	float: left;
+	border-bottom: none;
+	height: 100px;
+}
+.ant-not > h3 {
+	color: #8c8c8c;
+	font-size: 22px;
+	font-weight: 600;
+	padding-left: 30%;
+}
+.ant-not > p {
+	color: #8c8c8c;
+	margin-left: auto;
+    width: 70%;
+    font-size: 13px;
     font-weight: 500;
-    font-style: normal;
-    letter-spacing: 0px;
-    line-height: 33px;
-    margin-bottom: 15px;
-    text-align: left;
 }
-.box-anteriores {
-	height: 200px;
+.img-ant {
+	float: left;
+	width: 25%;
+	height: 100px;
+}
+.a1 {
+	background-image: url('../images/anteriores/ant-1.jpg');
+	background-size: cover;
+}
+.a2 {
+	background-image: url('../images/anteriores/ant-2.png');
+	background-size: cover;
+}
+.a3 {
+	background-image: url('../images/anteriores/ant-3.jpg');
+	background-size: cover;
+}
+.a4 {
+	background-image: url('../images/anteriores/ant-4.jpg');
+	background-size: cover;
+}
+.a5 {
+	background-image: url('../images/anteriores/ant-5.jpg');
+	background-size: cover;
+}
+.a6 {
+	background-image: url('../images/anteriores/ant-6.jpg');
+	background-size: cover;
+}
+.a7 {
+	background-image: url('../images/anteriores/ant-7.jpg');
+	background-size: cover;
+}
+.a8 {
+	background-image: url('../images/anteriores/ant-8.jpg');
+	background-size: cover;
+}
+.a9 {
+	background-image: url('../images/anteriores/ant-9.jpg');
+	background-size: cover;
+}
+.a10 {
+	background-image: url('../images/anteriores/ant-10.jpg');
+	background-size: cover;
+}
+.col-ant {
+	border-bottom: 1px solid black;
+	margin-bottom: 40px;
+}
+@media (max-width: 1110px) {
+	.last-box, .box-ant {
+	margin-bottom: 80px;
+	}
+}
+@media (max-width: 925px) {
+	.last-box, .box-mid {
+	margin-bottom: 100px;
+	}
+}
+@media (max-width: 850px) {
+	.last-box {
+	margin-bottom: 120px;
+	}
+}
+@media (max-width: 920px) {
+		.infos {
+		width: 40%;
+	}
+}
+@media (max-width: 860px) {
+		.infos {
+		width: 50%;
+	}
+}
+@media (max-width: 768px) {
+	.final {
+	flex-direction: column;
+	}
+	.infos {
+		width: 100%;
+	}
+	.col-ant-1 {
+	    border-bottom: none;
+	    margin-bottom: 0px;
+	}
+	.box-ant {
+		height: auto;
+		margin-bottom: 10px;
+	}
+}
+.ant-botoes {
+	text-align: center;
+}
+.ant-botoes > ul > li {
+	display: inline-block;
+}
+.ant-botoes > ul > button > a {
+	color: #8c8c8c;
+}
+.ant-botoes > ul > button{
+	background-color: #fff;
+	border-color: #f3eaea;
+}
+.ant-botoes > ul > .btn-primary{
+	background-color: #2975e0;
+
+}
+.ant-botoes > ul > .btn-primary > a{
+	color: #fff;
 }
