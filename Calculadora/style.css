@@ -1,0 +1,37 @@
+body {
+	font-family: Helvetica;
+	font-size: 14px;
+	background-color: #f9f9f9;
+}
+.principal {
+	margin: auto;
+}
+ ul {
+ 	padding-left: 0px;
+     list-style-type:none;
+ }
+ li {
+ 	display: inline;
+ 	border: 2px;
+ 	padding: 0px;
+ }
+.principal {
+	width: 300px;
+}
+ button[type=submit] {
+	width: 23%;
+	height: 35px;
+ }
+#tela {
+	width: 96%;
+	height: 35px;
+}
+h1 {
+	text-align: center;
+	font-size: 40px;
+	color: #4de4e4;
+	font-weight: 400;
+	font-style: normal;
+	letter-spacing: 0px;
+	line-height: 22px;
+}

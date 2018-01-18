@@ -348,6 +348,9 @@ body {
 	.infos {
 		width: 100%;
 	}
+	#contratando {
+		display: none;
+	}
 	.col-ant-1 {
 	    border-bottom: none;
 	    margin-bottom: 0px;
