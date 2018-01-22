@@ -7,3 +7,7 @@ Repositório para treinamento HTML+CSS na ForLogic.
 - **Bootstrap**
 - **Flex**
 - **Grid**
+- **JavaScript**
+- **JSON**
+- **jQuery**
+- **neDB**
