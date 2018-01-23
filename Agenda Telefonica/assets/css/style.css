@@ -1,0 +1,29 @@
+body {
+	font-family: helvetica;
+	font-size: 14px;
+}
+ul {
+	list-style-type: none;
+}
+header {
+	border: 1px solid black;
+	width: 100%;
+	height: 50px;
+}
+.container {
+	max-width: 940px;
+}
+.titulo {
+	text-align: center;
+	border: 1px solid blue;
+}
+.formulario {
+	border: 1px solid gray;
+}
+.menu {
+	border: 1px solid yellow;
+}
+footer {
+	border: 1px solid green;
+	text-align: center;
+}
