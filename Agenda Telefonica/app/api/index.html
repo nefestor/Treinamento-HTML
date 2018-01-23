@@ -1,103 +1,66 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-    <title>Treinamento JS</title>
-    <link rel="icon" href="https://i0.wp.com/www.forlogic.net/wp-content/uploads/2017/03/cropped-grupofavicon16x16.png?fit=32%2C32" sizes="32x32">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <style>
-        html,
-        body {
-            height: 100%;
-        }
-
-        .container {
-            margin-top: 1em;
-            line-height: 2;
-        }
-
-        .card {
-            margin-top: 1em;
-        }
-
-        .card-header,
-        .badge {
-            background-color: #1a587d;
-            color: #fff;
-        }
-
-        .footer {
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            border-top: 1px solid #1a587d;
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5em 0.5em;
-            margin-top: 1em;
-        }
-    </style>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Agenda Telefônica JavaScript</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
-        <a class="navbar-brand" href="/">API de Contatos</a>
-        <a class="navbar-brand pull-rigth" href="https://github.com/lgmf/simple-api" target="_blank">
-            <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="30" height="30" class="d-inline-block align-top"
-                alt=""> Acesse o projeto no Github
-        </a>
-    </nav>
-
-    <div class="container">
-
-        <div class="card">
-            <div class="card-header">
-                Manipulando os dados
-            </div>
-            <div class="card-body">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <span class="badge">GET</span> /contacts
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge">GET</span> /generate/[count] (Ex.: count = 10)
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge">GET</span> /contacts/{id}
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge">POST</span> /contacts
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge">PUT</span> /contacts/{id}
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge">DELETE</span> /contacts/{id}
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                Buscando dados específicos
-            </div>
-            <div class="card-body">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <span class="badge">GET</span> /contacts?firstName="João"
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <span class="text-muted info">&copy; Luiz Guilherme - Treinamento de JavaSript 2018</span>
-        <span class="text-muted version">API de Contatos v1.0.0</span>
-    </footer>
+	<header>
+		<a href="#">Home</a>
+	</header>
+	<div class="container">
+		<div class="titulo">
+			<h1>Agenda Telefônica</h1>
+		</div>
+		<div class="formulario">
+			<form>
+				<ul>
+					<li>
+						<label for="nome">Nome*:<br>
+							<input type="text" id="nome" name="nome">
+						</label>
+					</li>
+					<li>
+						<label for="email">Email*:<br>
+							<input type="text" id="email" name="email">
+						</label>
+					</li>
+					<li>
+						<label for="sexo">Sexo:<br>
+							<input type="text" id="sexo" name="sexo">
+						</label>
+					</li>
+					<li>
+						<label for="endereco">Endereço:<br>
+							<input type="text" id="endereco" name="endereco">
+						</label>
+					</li>
+					<li>
+						<label for="obs">Observações:<br>
+							<input type="text" id="obs" name="obs">
+						</label>
+					</li>
+				</ul>
+			</form>
+		</div>
+		<div class="menu">
+			<ul>
+				<li><button type="button" id="listar">Listar</li>
+				<li><button type="submit" id="cadastrar">Cadastrar</li>
+				<li><button type="submit">Editar</li>
+				<li><button type="submit">Excluir</li>
+			</ul>
+		</div>
+		<div class="list" id="lista">
+			<p id="test"></p>
+		</div>
+	</div>
+	<footer>
+		<h3>Tiago Pereira</h3>
+	</footer>
+	<script language="JavaScript" type="text/javascript" src="js/jquery.js"></script>
+	<script language="JavaScript" type="text/javascript" src="js/agenda.js"></script>
 </body>
-
 </html>

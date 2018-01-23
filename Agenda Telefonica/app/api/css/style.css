@@ -34,6 +34,9 @@ header > a {
 .menu > ul > li {
 	display: inline-block;
 }
+.list {
+	border: 1px solid pink;
+}
 footer {
 	border: 1px solid green;
 	text-align: center;
