@@ -1,6 +1,6 @@
-﻿# Treinamento HTML+CSS
+﻿# Treinamento HTML+CSS+JS
 -------------
-Repositório para treinamento HTML+CSS na ForLogic.
+Repositório para treinamento HTML+CSS+JS na ForLogic.
 
 - **HTML**
 - **CSS**
