@@ -4,7 +4,7 @@ Repositório para treinamento de programação Web na ForLogic.
 -------------
 - **HTML**
 - **CSS**
-- Bootstrap
+  - Bootstrap
   - Flex
   - Grid
 - **JavaScript**
