@@ -1,14 +1,14 @@
-﻿# Treinamento HTML+CSS+JS
+﻿# Treinamento Programação Web
 -------------
-Repositório para treinamento HTML+CSS+JS na ForLogic.
+Repositório para treinamento de programação Web na ForLogic.
 
 - **HTML**
 - **CSS**
-- **Bootstrap**
-- **Flex**
-- **Grid**
+- Bootstrap
+  - Flex
+  - Grid
 - **JavaScript**
-- **JSON**
-- **jQuery**
+  - JSON
+  - jQuery
+  - NodeJS
 - **neDB**
-- **NodeJS**
