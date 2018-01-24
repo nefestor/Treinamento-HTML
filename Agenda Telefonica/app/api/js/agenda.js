@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$('#listar').click(function() {
 		alert('hello');
 		$.get('http://localhost:3000/v1/contacts', function(data, status) {
-			$('#lista').html(data);
+			$('#test').html(data);
 			console.log(data);
 			alert(status);
 		});
@@ -25,5 +25,25 @@ $(document).ready(function() {
 	        }, function(data, status) {
 	        	$('#test').html(data);
             });
+	});
+	$('#excluir').click(function() {
+		alert('hi!');
+		var id = $('#id').val();
+		$.ajax({
+			url:`http://localhost:3000/v1/contacts/${id}`,
+			type: 'DELETE',
+			sucess: function(result) {
+				alert('gg!');
+			}
+		});
+	});
+	$('#procurar').click(function () {
+		alert('Localizando!');
+		var id = $('#id').val();
+		$.get(`http://localhost:3000/v1/contacts/${id}`, function(data, status) {
+			$('#test').html(data);
+			console.log(data);
+			alert(status);
+		});
 	});
 });
