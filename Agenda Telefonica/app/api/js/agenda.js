@@ -1,14 +1,30 @@
+let handleGetContacts = (data) => {
+    data.forEach((contact) => {
+        let tst = `
+                    <li class="data-list-item">
+                        <span class="title">${contact.firstName}</span>
+                    </li>
+                `
+        $('#teste').append(tst)
+    })
+}
+let handleGetContact = (data) => {
+        let tst = `
+                    <li class="data-list-item">
+                        <span class="title">${data.firstName}</span>
+                    </li>
+                `
+        $('#teste').append(tst)
+}
+
 $(document).ready(function() {
 	$('#listar').click(function() {
-		alert('hello');
-		$.get('http://localhost:3000/v1/contacts', function(data, status) {
-			$('#test').html(data);
-			console.log(data);
-			alert(status);
+		$.get('http://localhost:3000/v1/contacts', function(data) {
+			handleGetContacts(data);
+			console.table(data);
 		});
 	});
 	$('#cadastrar').click(function() {
-		alert('hi');
 		var nome = $('#nome').val();
 		var email = $('#email').val();
 		var sexo = $('#sexo').val();
@@ -22,39 +38,37 @@ $(document).ready(function() {
 	                address: endereco,
 	                comments: obs
 	            }
-	        }, function(data, status) {
-	        	$('#test').html(data);
+	        }, function(data) {
+	        	$.get(`http://localhost:3000/v1/contacts/${data}`, function(data) {
+				handleGetContact(data);
+				});
             });
 	});
 	$('#excluir').click(function() {
-		alert('hi!');
 		var id = $('#id').val();
 		$.ajax({
 			url:`http://localhost:3000/v1/contacts/${id}`,
 			type: 'DELETE',
-			sucess: function(result) {
-				alert('gg!');
+			sucess: function(data) {
+				console.log(data);
+				alert('Excluido!');
 			}
 		});
 	});
 	$('#procurar').click(function () {
-		alert('Localizando!');
 		var id = $('#id').val();
-		$.get(`http://localhost:3000/v1/contacts/${id}`, function(data, status) {
-			$('#test').html(data);
+		$.get(`http://localhost:3000/v1/contacts/${id}`, function(data) {
 			console.log(data);
-			alert(status);
+			handleGetContact(data);
 		});
 	});
 	$('#editar').click(function () {
-		alert('Editando!');
 		var id = $('#id').val();
 		var nome = $('#nome').val();
 		var email = $('#email').val();
 		var sexo = $('#sexo').val();
 		var endereco = $('#endereco').val();
 		var obs = $('#obs').val();
-		alert('Informações capturadas!');
 		let data = {
 				firstName: nome,
 				email: email,
@@ -64,14 +78,11 @@ $(document).ready(function() {
 	                comments: obs
 	            }
 	    }
-	    alert("Informações armazenadas em data");
 		$.ajax({
 		  url: `http://localhost:3000/v1/contacts/${id}`,
 		  type: 'PUT',
 		  data: data,
-		  success: function(data) {
-		    alert("Alterações realizadas!");
-		  }
+		  success: alert("atualizado")
 		});
 	});
 });
