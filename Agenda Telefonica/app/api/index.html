@@ -5,14 +5,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Agenda Telefônica JavaScript</title>
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://use.fontawesome.com/ad5b7f7765.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Lobster|Supermercado+One" rel="stylesheet">
 </head>
 <body>
 	<header>
 		<nav>
 			<ul>
-				<li><a href="#">Início</a></li>
-				<li><a href="#">Agenda</a></li>
-				<li><a href="#">Ajuda</a></li>
+				<li><a href="#"><i class="fa fa-home" aria-hidden="true"></i>Início</a></li>
+				<li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>Agenda</a></li>
+				<li><a href="#"><i class="fa fa-info" aria-hidden="true"></i>Ajuda</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -58,20 +60,20 @@
 						<input type="text" id="id" name="id">
 					</label>
 				</li>
-				<li><button type="button" id="listar">Listar</li>
-				<li><button type="submit" id="cadastrar">Cadastrar</li>
-				<li><button type="submit" id="editar">Editar</li>
-				<li><button type="submit" id="excluir">Excluir</li>
-				<li><button type="submit" id="procurar">Localizar</li>
+				<li><button type="submit" id="listar">Listar</button></li>
+				<li><button type="submit" id="cadastrar">Cadastrar</button></li>
+				<li><button type="submit" id="editar">Editar</button></li>
+				<li><button type="submit" id="excluir">Excluir</button></li>
+				<li><button type="submit" id="procurar">Localizar</button></li>
+				<li><button type="submit" id="limpar">Limpar</button></li>
 			</ul>
 		</div>
 		<div class="list" id="lista">
-			<ul id="teste">
-				<li><p>teste</p></li>
-			</ul>
+			<ul id="teste"></ul>
 		</div>
+	</div>
 	<footer>
-		<h3>Tiago Pereira</h3>
+		<h3>© Tiago Pereira - 2018</h3>
 	</footer>
 	<script language="JavaScript" type="text/javascript" src="js/jquery.js"></script>
 	<script language="JavaScript" type="text/javascript" src="js/agenda.js"></script>
