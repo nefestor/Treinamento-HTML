@@ -8,6 +8,7 @@ ul {
 	font-family:'Lobster', cursive;
 	list-style-type: none;
 	font-size: 16px;
+	padding-left: 0;
 }
 header > nav > ul {
 	margin: 0px;
@@ -111,4 +112,10 @@ button:hover {
 h3 {
 	margin: 0;
 	padding-top: 10px;
+}
+.menu > ul {
+}
+.menu > ul:nth-child(2) > li:nth-child(1) {
+	display: block;
+	margin-bottom: 15px;
 }

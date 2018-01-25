@@ -5,7 +5,7 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
                         <p style="text-decoration: underline;">Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address}<p>
                     </li>
                 `
-        $('#teste').append(tst).delay(500)
+        $('#teste').append(tst)
     })
 }
 let handleGetContact = (data) => { //Assim como a função anterior, essa trabalha apenas com 1 contato (usado na hora do registro/exclusão/alteração)
