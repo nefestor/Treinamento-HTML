@@ -1,5 +1,5 @@
-Retornar mensagem ao excluir
-Localizar pelo Nome/Email/ID
+Retornar mensagem ao excluir - Feito
+Localizar pelo Nome/Email/ID - Verificar se é ID(16 caracteres e tem número no meio), Nome ou e-mail (@ e .)
 Tornar obrigatório o nome e e-mail no cadastro
 Criar página Inicio
 Criar página Ajuda com informações acerca dos botões e formulário

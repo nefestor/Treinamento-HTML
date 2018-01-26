@@ -50,10 +50,7 @@ $(document).ready(function() { //Necessário para que o jQuery funcione de forma
 		$.ajax({
 			url:`http://localhost:3000/v1/contacts/${id}`,
 			type: 'DELETE',
-			sucess: function(data) {
-				console.log(data);
-				alert('Excluido!');
-			}
+			sucess: alert("Contato excluido!")
 		});
 	});
 	$('#procurar').click(function () { //Procura um ID específico, digitado a partir do input na tela e retorna esse ID na ul #teste, utilizando o método GET.
