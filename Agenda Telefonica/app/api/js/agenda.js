@@ -28,20 +28,37 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
 	                        <p>Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} | Favoritos: <i class="fa fa-star" aria-hidden="true"></i><p>
 	                    </li>
 	                `
+
 	        $('#teste').append(tst)
     	} else if(contact.isFavorite && contact.info.comments != "") {
 	        let tst = `
 	                    <li class="data-list-item">
-	                        <p>Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} | Favoritos: <i class="fa fa-star" aria-hidden="true"></i> | Observações: <a href="http://localhost:3000/v1/contacts/${contact._id}"<i class="fa fa-comment" aria-hidden="true"></i></a><p>
+	                        <p style="display: inline;">Nome: <p style="display: inline;">${contact.firstName} </p>| Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} | Favoritos: <i class="fa fa-star" aria-hidden="true"></i> | Observações: <button class="buttonObs"><i class="fa fa-comment" aria-hidden="true"></i></button><p>
 	                    </li>
 	                `
-	        $('#teste').append(tst)
-    	}else if(contact.isFavorite == false && contact.info.comments != "") {
+/*	       	$('.testando').click(function (event) {
+				let obs =  `Comentários: ${contact.info.comments}`
+				console.log(event);
+				let ts = event.currentTarget.parentNode.nextElementSibling;
+				$(ts).empty();
+				ts.append(obs);
+				$(ts).toggle("slow");
+			});*/
+	        $("#teste").append(tst)
+    	} else if(contact.isFavorite == false && contact.info.comments != "") {
 	        let tst = `
 	                    <li class="data-list-item">
-	                        <p>Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} | Observações: <a href="http://localhost:3000/v1/contacts/${contact._id}"><i class="fa fa-comment" aria-hidden="true"></i></a><p>
+	                        <p style="display: inline;">Nome: <p style="display: inline;">${contact.firstName}</p>| Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} | Observações: <button class="buttonObs"><i class="fa fa-comment" aria-hidden="true"></i></button><p>
 	                    </li>
 	                `
+/*	       	$('.teste').click(function (event) {
+				let obs =  `Comentários: ${contact.info.comments}`
+				console.log(event);
+				let ts = event.currentTarget.parentNode.nextElementSibling;
+				$(ts).empty();
+				ts.append(obs);
+				$(ts).toggle("slow");
+			});*/
 	        $('#teste').append(tst)
     	} else {
     		let tst = `
@@ -74,6 +91,17 @@ let handleGetContact = (data) => { //Assim como a função anterior, essa trabal
         $('#teste').append(tst)
 }
 
+/*$('.buttonObs').click(function (event) { //deu ruim pra cacete
+	//let obs =  `Comentários: ${contact.info.comments}`
+	//console.log(obs);
+	let name = event.currentTarget.parentNode.children[1];
+	$.get(`http://localhost:3000/v1/contacts?firstName=${name}`, function(data) {
+		console.log(data);
+	});
+	//$(ts).empty();
+	//ts.append(obs);
+	//$(ts).toggle("slow");
+});*/
 
 $(document).ready(function() { //Necessário para que o jQuery funcione de forma satisfatória.
 	$('#listar').click(function() { //Função que lista todos os contatos e retorna-os na ul #teste e no console.
