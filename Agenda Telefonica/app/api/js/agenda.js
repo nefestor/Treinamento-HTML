@@ -22,7 +22,7 @@ function validarNome(n) {
 
 let handleGetContacts = (data) => { //Pega data (informações) que uma função que retorna 'contatos' e para cada contato de data, incrementa na variável tst uma li com um span dentro (que contém o nome do contato), por fim usa a função append para adicionar texto na ul #teste.
     data.forEach((contact) => {
-    	if(contact.info.comments != "") {
+    	if(contact.isFavorite) {
 	        let tst = `
 	                    <li class="data-list-item">
 	                        <p style="text-decoration: underline;">Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} Favoritos: <i class="fa fa-star" aria-hidden="true"></i><p>
@@ -39,6 +39,18 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
     }
     })
 }
+let handleGetFavorites = (data) => { //Pega data (informações) que uma função que retorna 'contatos' e para cada contato de data, incrementa na variável tst uma li com um span dentro (que contém o nome do contato), por fim usa a função append para adicionar texto na ul #teste. [faz uma verificação para saber se o contato é favorito ou não]
+    data.forEach((contact) => {
+    	if(contact.isFavorite) {
+	        let tst = `
+	                    <li class="data-list-item">
+	                        <p style="text-decoration: underline;">Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} Favoritos: <i class="fa fa-star" aria-hidden="true"></i><p>
+	                    </li>
+	                `
+	        $('#teste').append(tst)
+   		}
+	})
+}
 let handleGetContact = (data) => { //Assim como a função anterior, essa trabalha apenas com 1 contato (usado na hora do registro/exclusão/alteração)
         let tst = `
                     <li class="data-list-item">
@@ -54,6 +66,13 @@ $(document).ready(function() { //Necessário para que o jQuery funcione de forma
 		$('#teste').empty();
 		$.get('http://localhost:3000/v1/contacts', function(data) { //Usa o método GET para pegar a lista de contato na URL e retorna com a function(data) os dados dessa URL.
 			handleGetContacts(data);
+			console.table(data);
+		});
+	});
+	$('#favoritos').click(function() { //Função que lista todos os contatos e retorna-os na ul #teste e no console.
+		$('#teste').empty();
+		$.get('http://localhost:3000/v1/contacts', function(data) { //Usa o método GET para pegar a lista de contato na URL e retorna com a function(data) os dados dessa URL.
+			handleGetFavorites(data);
 			console.table(data);
 		});
 	});
