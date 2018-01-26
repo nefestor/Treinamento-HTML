@@ -1,3 +1,25 @@
+/*var StringEmail = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
+function validarEmail() {
+	var campoEmail = document.getElementById("email");
+    if (email != "") {
+        if(! StringEmail.test(email)) {
+         alert("Email Invalido");
+         email.focus();
+         return false;
+        }
+    }
+}
+var StringNome = /[A-z]/;
+function validarNome(n) {
+    if (nome != "") {
+        if(! StringNome.test(nome)) {
+         alert("Nome Invalido");
+         nome.focus();
+         return false;
+        }
+    }
+}*/
+
 let handleGetContacts = (data) => { //Pega data (informações) que uma função que retorna 'contatos' e para cada contato de data, incrementa na variável tst uma li com um span dentro (que contém o nome do contato), por fim usa a função append para adicionar texto na ul #teste.
     data.forEach((contact) => {
         let tst = `
@@ -16,6 +38,7 @@ let handleGetContact = (data) => { //Assim como a função anterior, essa trabal
                 `
         $('#teste').append(tst)
 }
+
 
 $(document).ready(function() { //Necessário para que o jQuery funcione de forma satisfatória.
 	$('#listar').click(function() { //Função que lista todos os contatos e retorna-os na ul #teste e no console.
