@@ -1,12 +1,7 @@
-Localizar pelo Nome/Email/ID - Verificar se é ID(16 caracteres e tem número no meio), Nome ou e-mail (@ e .)
-Tornar obrigatório o nome e e-mail no cadastro - Criar validação para os 2 e no boão cadastrar verificar se estão não estão vazios/invalidos
+Tornar obrigatório o nome e e-mail no cadastro - Criar validação para os 2 e no botão cadastrar verificar se estão não estão vazios/invalidos
 Sinalizar os registros que possuem observações na listagem - Se registro não for nulo, botãozinho é azul se não é cinza
-Marcar e Listar Favoritos - Se for favorito é amarelo se n é cinza
+Marcar e Listar Favoritos
 Criar uma função para exportar todos os contatos - (?)
-Criar página Inicio - Bônus
-Criar página Ajuda com informações acerca dos botões e formulário - Bônus
 
-
-if(!re.test(field.val()) || Shared.__is_empty(field.val()))
 
 .length (conta a quant. de elementos)

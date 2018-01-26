@@ -22,12 +22,21 @@ function validarNome(n) {
 
 let handleGetContacts = (data) => { //Pega data (informações) que uma função que retorna 'contatos' e para cada contato de data, incrementa na variável tst uma li com um span dentro (que contém o nome do contato), por fim usa a função append para adicionar texto na ul #teste.
     data.forEach((contact) => {
-        let tst = `
-                    <li class="data-list-item">
-                        <p style="text-decoration: underline;">Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address}<p>
-                    </li>
-                `
-        $('#teste').append(tst)
+    	if(contact.info.comments != "") {
+	        let tst = `
+	                    <li class="data-list-item">
+	                        <p style="text-decoration: underline;">Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} Favoritos: <i class="fa fa-star" aria-hidden="true"></i><p>
+	                    </li>
+	                `
+	        $('#teste').append(tst)
+    } else {
+    	let tst = `
+	                    <li class="data-list-item">
+	                        <p style="text-decoration: underline;">Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address}<p>
+	                    </li>
+	                `
+	        $('#teste').append(tst)
+    }
     })
 }
 let handleGetContact = (data) => { //Assim como a função anterior, essa trabalha apenas com 1 contato (usado na hora do registro/exclusão/alteração)
