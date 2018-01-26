@@ -22,21 +22,35 @@ function validarNome(n) {
 
 let handleGetContacts = (data) => { //Pega data (informações) que uma função que retorna 'contatos' e para cada contato de data, incrementa na variável tst uma li com um span dentro (que contém o nome do contato), por fim usa a função append para adicionar texto na ul #teste.
     data.forEach((contact) => {
-    	if(contact.isFavorite) {
+    	if(contact.isFavorite && contact.info.comments == "") {
 	        let tst = `
 	                    <li class="data-list-item">
-	                        <p style="text-decoration: underline;">Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} Favoritos: <i class="fa fa-star" aria-hidden="true"></i><p>
+	                        <p>Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} | Favoritos: <i class="fa fa-star" aria-hidden="true"></i><p>
 	                    </li>
 	                `
 	        $('#teste').append(tst)
-    } else {
-    	let tst = `
+    	} else if(contact.isFavorite && contact.info.comments != "") {
+	        let tst = `
 	                    <li class="data-list-item">
-	                        <p style="text-decoration: underline;">Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address}<p>
+	                        <p>Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} | Favoritos: <i class="fa fa-star" aria-hidden="true"></i> | Observações: <a href="http://localhost:3000/v1/contacts/${contact._id}"<i class="fa fa-comment" aria-hidden="true"></i></a><p>
 	                    </li>
 	                `
 	        $('#teste').append(tst)
-    }
+    	}else if(contact.isFavorite == false && contact.info.comments != "") {
+	        let tst = `
+	                    <li class="data-list-item">
+	                        <p>Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} | Observações: <a href="http://localhost:3000/v1/contacts/${contact._id}"><i class="fa fa-comment" aria-hidden="true"></i></a><p>
+	                    </li>
+	                `
+	        $('#teste').append(tst)
+    	} else {
+    		let tst = `
+	                    <li class="data-list-item">
+	                        <p>Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address}<p>
+	                    </li>
+	                `
+	        $('#teste').append(tst)
+    	}
     })
 }
 let handleGetFavorites = (data) => { //Pega data (informações) que uma função que retorna 'contatos' e para cada contato de data, incrementa na variável tst uma li com um span dentro (que contém o nome do contato), por fim usa a função append para adicionar texto na ul #teste. [faz uma verificação para saber se o contato é favorito ou não]
