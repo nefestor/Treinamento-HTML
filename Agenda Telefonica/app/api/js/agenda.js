@@ -47,11 +47,16 @@ $(document).ready(function() { //Necessário para que o jQuery funcione de forma
 	});
 	$('#excluir').click(function() {  //Pega o ID de quem você quer excluir da lista a partir do input, em seguida utiliza-se o método DELETE para fazer esse processo de remoção. Retorna o nome do usuário excluído na ul #teste e um alert.
 		var id = $('#id').val();
-		$.ajax({
-			url:`http://localhost:3000/v1/contacts/${id}`,
-			type: 'DELETE',
-			sucess: alert("Contato excluido!")
-		});
+		var apagar = confirm('Deseja realmente excluir este regristro?');
+		if (apagar) {
+			$.ajax({
+				url:`http://localhost:3000/v1/contacts/${id}`,
+				type: 'DELETE',
+				sucess: alert("Contato excluido!")
+			});
+		} else {
+			event.preventDefault();
+		}
 	});
 	$('#procurar').click(function () { //Procura um ID específico, digitado a partir do input na tela e retorna esse ID na ul #teste, utilizando o método GET.
 		var id = $('#id').val();
