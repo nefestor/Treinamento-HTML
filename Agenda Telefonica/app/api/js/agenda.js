@@ -159,6 +159,20 @@ $(document).ready(function() { //Necessário para que o jQuery funcione de forma
 			handleGetContact(data);
 		});
 	});
+	$('#exportar').click(function () {
+		$.get('http://localhost:3000/v1/contacts', function(data) {
+			handleGetContacts(data);
+			console.table(data);
+			data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
+			var a = document.createElement("a");
+			document.body.appendChild(a);
+			a.style = "display: none";
+			a.href = 'data:' + data ;
+			a.download = "data.txt";
+			a.click();
+		});
+	});
+
 	$('#editar').click(function () { //Edita informações de um usuário a partir do ID e das informações digitadas, usa-se o método PUT para realizar essa troca.
 		var id = $('#id').val();
 		var nome = $('#nome').val();
