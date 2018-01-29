@@ -20,32 +20,16 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
     	} else if(contact.isFavorite && contact.info.comments != "") {
 	        let tst = `
 	                    <tr class="data-list-item">
-	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><i class="fa fa-star" aria-hidden="true"></i></td> <td><button class="buttonObs"><i class="fa fa-comment" aria-hidden="true"></i></button><td>
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><i class="fa fa-star" aria-hidden="true"></i></td> <td><button class="testando"><i class="fa fa-comment" aria-hidden="true"></i></button><td>
 	                    </tr>
 	                `
-/*	       	$('.testando').click(function (event) {
-				let obs =  `Comentários: ${contact.info.comments}`
-				console.log(event);
-				let ts = event.currentTarget.parentNode.nextElementSibling;
-				$(ts).empty();
-				ts.append(obs);
-				$(ts).toggle("slow");
-			});*/
 	        $("#teste").append(tst)
     	} else if(contact.isFavorite == false && contact.info.comments != "") {
 	        let tst = `
 	                    <tr class="data-list-item">
-	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td></td> <td><button class="buttonObs"><i class="fa fa-comment" aria-hidden="true"></i></button></td>
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td></td> <td><button class="testando"><i class="fa fa-comment" aria-hidden="true"></i></button></td>
 	                    </tr>
 	                `
-/*	       	$('.teste').click(function (event) {
-				let obs =  `Comentários: ${contact.info.comments}`
-				console.log(event);
-				let ts = event.currentTarget.parentNode.nextElementSibling;
-				$(ts).empty();
-				ts.append(obs);
-				$(ts).toggle("slow");
-			});*/
 	        $('#teste').append(tst)
     	} else {
     		let tst = `
@@ -56,7 +40,20 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
 	        $('#teste').append(tst)
     	}
     })
+    $('.testando').click(function (event) { //botão de observações
+	    console.log(event);
+		let name = event.currentTarget.parentElement.parentElement.firstElementChild.innerText;
+		$.get(`http://localhost:3000/v1/contacts?firstName=${name}`, function(data) {
+			let obs = `Comentários: ${data[0].info.comments}`;
+			let ts = event.currentTarget.parentElement.parentElement.nextElementSibling;
+			console.log(ts);
+			$('#coments').empty();
+			$('#coments').append(obs);
+			$('#coments').toggle('fast');
+		});
+	});
 }
+
 let handleGetFavorites = (data) => { //Pega data (informações) que uma função que retorna 'contatos' e para cada contato de data, incrementa na variável tst uma li com um span dentro (que contém o nome do contato), por fim usa a função append para adicionar texto na ul #teste. [faz uma verificação para saber se o contato é favorito ou não]
 	let tst =  `<tr>
 				<th>Nome</th>

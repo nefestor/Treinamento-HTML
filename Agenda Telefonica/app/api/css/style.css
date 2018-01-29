@@ -119,3 +119,10 @@ h3 {
 	display: block;
 	margin-bottom: 15px;
 }
+#coments {
+	width: 50%;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+	text-decoration: underline;
+}
