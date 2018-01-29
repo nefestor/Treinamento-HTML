@@ -12,7 +12,7 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
     	if(contact.isFavorite && contact.info.comments == "") {
 	        let tst = `
 	                    <tr class="data-list-item">
-	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><i class="fa fa-star" aria-hidden="true"></i></td> <td></td>
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star" aria-hidden="true"></i></button></td> <td><button><i class="fa fa-comment-o" aria-hidden="true"></i></button></td>
 	                    </tr>
 	                `
 
@@ -20,21 +20,21 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
     	} else if(contact.isFavorite && contact.info.comments != "") {
 	        let tst = `
 	                    <tr class="data-list-item">
-	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><i class="fa fa-star" aria-hidden="true"></i></td> <td><button class="testando"><i class="fa fa-comment" aria-hidden="true"></i></button><td>
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star" aria-hidden="true"></i></button></td> <td><button class="testando"><i class="fa fa-comment" aria-hidden="true"></i></button><td>
 	                    </tr>
 	                `
 	        $("#teste").append(tst)
     	} else if(contact.isFavorite == false && contact.info.comments != "") {
 	        let tst = `
 	                    <tr class="data-list-item">
-	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td></td> <td><button class="testando"><i class="fa fa-comment" aria-hidden="true"></i></button></td>
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star-o" aria-hidden="true"></i></button></td> <td><button class="testando"><i class="fa fa-comment" aria-hidden="true"></i></button></td>
 	                    </tr>
 	                `
 	        $('#teste').append(tst)
     	} else {
     		let tst = `
 	                    <tr class="data-list-item">
-	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td></td> <td></td>
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star-o" aria-hidden="true"></i></button></td> <td><button><i class="fa fa-comment-o" aria-hidden="true"></i></button></td>
 	                    </tr>
 	                `
 	        $('#teste').append(tst)
@@ -52,7 +52,50 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
 			$('#coments').toggle('fast');
 		});
 	});
-}
+	$('.favoritando').click(function (event) { //botão de favoritos
+		let name = event.currentTarget.parentElement.parentElement.firstElementChild.innerText;
+		$.get(`http://localhost:3000/v1/contacts?firstName=${name}`, function(data) {
+			let obs = `${data[0].isFavorite}`;
+			let id = `${data[0].id}`;
+			console.log(obs);
+			if (obs == true) {
+				let data = {
+					firstName: data[0].firstName,
+					email: data[0].email,
+					gender: data[0].gender,
+					isFavorite: false,
+					info: {
+		                address: data[0].adress,
+		                comments: data[0].comments
+		            }
+			    };
+				$.ajax({
+				  url: `http://localhost:3000/v1/contacts/${id}`,
+				  type: 'PUT',
+				  data: data,
+				  success: alert("atualizado")
+				});
+			} else {
+				let data = {
+					firstName: data[0].firstName,
+					email: data[0].email,
+					gender: data[0].gender,
+					isFavorite: true,
+					info: {
+		                address: data[0].adress,
+		                comments: data[0].comments
+		           }
+				};
+				$.ajax({
+				  url: `http://localhost:3000/v1/contacts/${id}`,
+				  type: 'PUT',
+				  data: data,
+				  success: alert("atualizado")
+				});
+			}
+		});
+	});
+}//debuggar aqui!!
 
 let handleGetFavorites = (data) => { //Pega data (informações) que uma função que retorna 'contatos' e para cada contato de data, incrementa na variável tst uma li com um span dentro (que contém o nome do contato), por fim usa a função append para adicionar texto na ul #teste. [faz uma verificação para saber se o contato é favorito ou não]
 	let tst =  `<tr>
@@ -142,8 +185,6 @@ $(document).ready(function() { //Necessário para que o jQuery funcione de forma
 	});
 	$('#exportar').click(function () {
 		$.get('http://localhost:3000/v1/contacts', function(data) {
-			handleGetContacts(data);
-			console.table(data);
 			data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
 			var a = document.createElement("a");
 			document.body.appendChild(a);
