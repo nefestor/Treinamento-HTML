@@ -1,6 +1,2 @@
 Tornar obrigatório o nome e e-mail no cadastro - Criar validação para os 2 e no botão cadastrar verificar se estão não estão vazios/invalidos
 Sinalizar os registros que possuem observações na listagem - Se registro não for nulo, botãozinho é azul se não é cinza
-Criar uma função para exportar todos os contatos - (?)
-
-
-.length (conta a quant. de elementos)

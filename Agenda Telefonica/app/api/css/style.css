@@ -89,9 +89,9 @@ form > ul > li > label > input {
 	margin-right: 5px;
 }
 #teste {
-	margin-top: 30px;
-	margin-bottom: 0px;
 	text-align: center;
+	margin: 30px auto 0 auto;
+	border: 1px solid #c2c2c2;
 }
 form > ul > li {
 	margin-bottom: 10px;

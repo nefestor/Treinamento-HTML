@@ -1,40 +1,27 @@
-/*var StringEmail = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
-function validarEmail() {
-	var campoEmail = document.getElementById("email");
-    if (email != "") {
-        if(! StringEmail.test(email)) {
-         alert("Email Invalido");
-         email.focus();
-         return false;
-        }
-    }
-}
-var StringNome = /[A-z]/;
-function validarNome(n) {
-    if (nome != "") {
-        if(! StringNome.test(nome)) {
-         alert("Nome Invalido");
-         nome.focus();
-         return false;
-        }
-    }
-}*/
-
 let handleGetContacts = (data) => { //Pega data (informações) que uma função que retorna 'contatos' e para cada contato de data, incrementa na variável tst uma li com um span dentro (que contém o nome do contato), por fim usa a função append para adicionar texto na ul #teste.
+	let tst =  `<tr>
+					<th>Nome</th>
+					<th>Email</th>
+					<th>Sexo</th>
+					<th>Endereço</th>
+					<th>Favoritos</th>
+					<th>Observações</th>
+				</tr>`
+	$('#teste').append(tst)
     data.forEach((contact) => {
     	if(contact.isFavorite && contact.info.comments == "") {
 	        let tst = `
-	                    <li class="data-list-item">
-	                        <p>Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} | Favoritos: <i class="fa fa-star" aria-hidden="true"></i><p>
-	                    </li>
+	                    <tr class="data-list-item">
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><i class="fa fa-star" aria-hidden="true"></i></td> <td></td>
+	                    </tr>
 	                `
 
 	        $('#teste').append(tst)
     	} else if(contact.isFavorite && contact.info.comments != "") {
 	        let tst = `
-	                    <li class="data-list-item">
-	                        <p style="display: inline;">Nome: <p style="display: inline;">${contact.firstName} </p>| Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} | Favoritos: <i class="fa fa-star" aria-hidden="true"></i> | Observações: <button class="buttonObs"><i class="fa fa-comment" aria-hidden="true"></i></button><p>
-	                    </li>
+	                    <tr class="data-list-item">
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><i class="fa fa-star" aria-hidden="true"></i></td> <td><button class="buttonObs"><i class="fa fa-comment" aria-hidden="true"></i></button><td>
+	                    </tr>
 	                `
 /*	       	$('.testando').click(function (event) {
 				let obs =  `Comentários: ${contact.info.comments}`
@@ -47,9 +34,9 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
 	        $("#teste").append(tst)
     	} else if(contact.isFavorite == false && contact.info.comments != "") {
 	        let tst = `
-	                    <li class="data-list-item">
-	                        <p style="display: inline;">Nome: <p style="display: inline;">${contact.firstName}</p>| Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} | Observações: <button class="buttonObs"><i class="fa fa-comment" aria-hidden="true"></i></button><p>
-	                    </li>
+	                    <tr class="data-list-item">
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td></td> <td><button class="buttonObs"><i class="fa fa-comment" aria-hidden="true"></i></button></td>
+	                    </tr>
 	                `
 /*	       	$('.teste').click(function (event) {
 				let obs =  `Comentários: ${contact.info.comments}`
@@ -62,27 +49,36 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
 	        $('#teste').append(tst)
     	} else {
     		let tst = `
-	                    <li class="data-list-item">
-	                        <p>Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address}<p>
-	                    </li>
+	                    <tr class="data-list-item">
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td></td> <td></td>
+	                    </tr>
 	                `
 	        $('#teste').append(tst)
     	}
     })
 }
 let handleGetFavorites = (data) => { //Pega data (informações) que uma função que retorna 'contatos' e para cada contato de data, incrementa na variável tst uma li com um span dentro (que contém o nome do contato), por fim usa a função append para adicionar texto na ul #teste. [faz uma verificação para saber se o contato é favorito ou não]
+	let tst =  `<tr>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>Sexo</th>
+				<th>Endereço</th>
+				<th>Favoritos</th>
+			</tr>`
+	$('#teste').append(tst)
     data.forEach((contact) => {
     	if(contact.isFavorite) {
 	        let tst = `
-	                    <li class="data-list-item">
-	                        <p style="text-decoration: underline;">Nome: ${contact.firstName} | Email: ${contact.email} | Sexo: ${contact.gender} | Endereço:${contact.info.address} Favoritos: <i class="fa fa-star" aria-hidden="true"></i><p>
-	                    </li>
+	                    <tr class="data-list-item">
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><i class="fa fa-star" aria-hidden="true"></i></td>
+	                    </tr>
 	                `
 	        $('#teste').append(tst)
    		}
 	})
 }
 let handleGetContact = (data) => { //Assim como a função anterior, essa trabalha apenas com 1 contato (usado na hora do registro/exclusão/alteração)
+
         let tst = `
                     <li class="data-list-item">
                         <p>Nome: ${data.firstName}| Email: ${data.email} | Sexo: ${data.gender} | Endereço:${data.info.address}</p>
@@ -90,18 +86,6 @@ let handleGetContact = (data) => { //Assim como a função anterior, essa trabal
                 `
         $('#teste').append(tst)
 }
-
-/*$('.buttonObs').click(function (event) { //deu ruim pra cacete
-	//let obs =  `Comentários: ${contact.info.comments}`
-	//console.log(obs);
-	let name = event.currentTarget.parentNode.children[1];
-	$.get(`http://localhost:3000/v1/contacts?firstName=${name}`, function(data) {
-		console.log(data);
-	});
-	//$(ts).empty();
-	//ts.append(obs);
-	//$(ts).toggle("slow");
-});*/
 
 $(document).ready(function() { //Necessário para que o jQuery funcione de forma satisfatória.
 	$('#listar').click(function() { //Função que lista todos os contatos e retorna-os na ul #teste e no console.
