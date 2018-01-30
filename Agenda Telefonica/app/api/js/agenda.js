@@ -12,7 +12,7 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
     	if(contact.isFavorite && contact.info.comments == "") {
 	        let tst = `
 	                    <tr class="data-list-item">
-	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star" aria-hidden="true"></i></button></td> <td><button><i class="fa fa-comment-o" aria-hidden="true"></i></button></td>
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star" "data-favorito = true" aria-hidden="true"></i></button></td> <td><button><i class="fa fa-comment-o" aria-hidden="true"></i></button></td>
 	                    </tr>
 	                `
 
@@ -20,21 +20,21 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
     	} else if(contact.isFavorite && contact.info.comments != "") {
 	        let tst = `
 	                    <tr class="data-list-item">
-	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star" aria-hidden="true"></i></button></td> <td><button class="testando"><i class="fa fa-comment" aria-hidden="true"></i></button><td>
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star" "data-favorito = true" aria-hidden="true"></i></button></td> <td><button class="testando"><i class="fa fa-comment" aria-hidden="true"></i></button><td>
 	                    </tr>
 	                `
 	        $("#teste").append(tst)
     	} else if(contact.isFavorite == false && contact.info.comments != "") {
 	        let tst = `
 	                    <tr class="data-list-item">
-	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star-o" aria-hidden="true"></i></button></td> <td><button class="testando"><i class="fa fa-comment" aria-hidden="true"></i></button></td>
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star-o" "data-favorito = false" aria-hidden="true"></i></button></td> <td><button class="testando"><i class="fa fa-comment" aria-hidden="true"></i></button></td>
 	                    </tr>
 	                `
 	        $('#teste').append(tst)
     	} else {
     		let tst = `
 	                    <tr class="data-list-item">
-	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star-o" aria-hidden="true"></i></button></td> <td><button><i class="fa fa-comment-o" aria-hidden="true"></i></button></td>
+	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star-o" "data-favorito = false" aria-hidden="true"></i></button></td> <td><button><i class="fa fa-comment-o" aria-hidden="true"></i></button></td>
 	                    </tr>
 	                `
 	        $('#teste').append(tst)
@@ -54,43 +54,54 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
 	});
 	$('.favoritando').click(function (event) { //botão de favoritos
 		let name = event.currentTarget.parentElement.parentElement.firstElementChild.innerText;
+		console.log(name);
 		$.get(`http://localhost:3000/v1/contacts?firstName=${name}`, function(data) {
-			let obs = `${data[0].isFavorite}`;
-			let id = `${data[0].id}`;
+			var obs = `${data[0].isFavorite}`;
 			console.log(obs);
-			if (obs == true) {
+			var id = `${data[0]._id}`;
+			var nome = `${data[0].firstName}`;
+			console.log(nome);
+			var email = `${data[0].email}`;
+			console.log(email);
+			var sexo = `${data[0].gender}`;
+			var endereco = `${data[0].info.address}`;
+			var comments = `${data[0].info.comments}`;
+			var tr = 'true';
+			var fl = 'false';
+			console.log(id);
+			if (obs == 'true') {
 				let data = {
-					firstName: data[0].firstName,
-					email: data[0].email,
-					gender: data[0].gender,
-					isFavorite: false,
+					firstName: nome,
+					email: email,
+					gender: sexo,
+					isFavorite: fl,
 					info: {
-		                address: data[0].adress,
-		                comments: data[0].comments
+		                address: endereco,
+		                comments: comments
 		            }
-			    };
+			    }
 				$.ajax({
 				  url: `http://localhost:3000/v1/contacts/${id}`,
 				  type: 'PUT',
 				  data: data,
-				  success: alert("atualizado")
+				  success: alert("atualizado pra false")
 				});
 			} else {
 				let data = {
-					firstName: data[0].firstName,
-					email: data[0].email,
-					gender: data[0].gender,
-					isFavorite: true,
+					firstName: nome,
+					email: email,
+					gender: sexo,
+					isFavorite: tr,
 					info: {
-		                address: data[0].adress,
-		                comments: data[0].comments
+		                address: endereco,
+		                comments: comments
 		           }
-				};
+				}
 				$.ajax({
 				  url: `http://localhost:3000/v1/contacts/${id}`,
 				  type: 'PUT',
 				  data: data,
-				  success: alert("atualizado")
+				  success: alert("atualizado pra true")
 				});
 			}
 		});
@@ -148,19 +159,23 @@ $(document).ready(function() { //Necessário para que o jQuery funcione de forma
 		var sexo = $('#sexo').val();
 		var endereco = $('#endereco').val();
 		var obs = $('#obs').val();
-		$.post('http://localhost:3000/v1/contacts', {
-				firstName: nome,
-				email: email,
-				gender: sexo,
-				info: {
-	                address: endereco,
-	                comments: obs
-	            }
-	        }, function(data) {
-	        	$.get(`http://localhost:3000/v1/contacts/${data}`, function(data) {
-				handleGetContact(data);
-				});
-            });
+		if(nome != "" && email != "") {
+			$.post('http://localhost:3000/v1/contacts', {
+					firstName: nome,
+					email: email,
+					gender: sexo,
+					info: {
+		                address: endereco,
+		                comments: obs
+		            }
+		        }, function(data) {
+		        	$.get(`http://localhost:3000/v1/contacts/${data}`, function(data) {
+					handleGetContact(data);
+					});
+	            });
+		} else {
+			alert("Nome e Email devem estar preenchidos corretamente");
+		}
 	});
 	$('#excluir').click(function() {  //Pega o ID de quem você quer excluir da lista a partir do input, em seguida utiliza-se o método DELETE para fazer esse processo de remoção. Retorna o nome do usuário excluído na ul #teste e um alert.
 		var id = $('#id').val();
