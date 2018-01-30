@@ -9,7 +9,8 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
 				</tr>`
 	$('#teste').append(tst)
     data.forEach((contact) => {
-    	if(contact.isFavorite && contact.info.comments == "") {
+    	contact.isFavorite = contact.isFavorite.toString();
+    	if((contact.isFavorite == 'true' && contact.info.comments == "")  || (contact.isFavorite == true && contact.info.comments == "")){
 	        let tst = `
 	                    <tr class="data-list-item">
 	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star" "data-favorito = true" aria-hidden="true"></i></button></td> <td><button><i class="fa fa-comment-o" aria-hidden="true"></i></button></td>
@@ -17,21 +18,21 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
 	                `
 
 	        $('#teste').append(tst)
-    	} else if(contact.isFavorite && contact.info.comments != "") {
+    	} else if((contact.isFavorite == 'true' && contact.info.comments != "") || (contact.isFavorite == true && contact.info.comments != "")){
 	        let tst = `
 	                    <tr class="data-list-item">
 	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star" "data-favorito = true" aria-hidden="true"></i></button></td> <td><button class="testando"><i class="fa fa-comment" aria-hidden="true"></i></button><td>
 	                    </tr>
 	                `
 	        $("#teste").append(tst)
-    	} else if(contact.isFavorite == false && contact.info.comments != "") {
+    	} else if((contact.isFavorite == 'false' && contact.info.comments != "") || (contact.isFavorite == false && contact.info.comments != "")) {
 	        let tst = `
 	                    <tr class="data-list-item">
 	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star-o" "data-favorito = false" aria-hidden="true"></i></button></td> <td><button class="testando"><i class="fa fa-comment" aria-hidden="true"></i></button></td>
 	                    </tr>
 	                `
 	        $('#teste').append(tst)
-    	} else {
+    	} else if((contact.isFavorite == 'false' && contact.info.comments == "") || (contact.isFavorite == false && contact.info.comments == "")) {
     		let tst = `
 	                    <tr class="data-list-item">
 	                        <td>${contact.firstName}</td> <td>${contact.email}</td> <td>${contact.gender}</td> <td>${contact.info.address}</td> <td><button class="favoritando"><i class="estrela fa fa-star-o" "data-favorito = false" aria-hidden="true"></i></button></td> <td><button><i class="fa fa-comment-o" aria-hidden="true"></i></button></td>
@@ -54,27 +55,22 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
 	});
 	$('.favoritando').click(function (event) { //botão de favoritos
 		let name = event.currentTarget.parentElement.parentElement.firstElementChild.innerText;
-		console.log(name);
 		$.get(`http://localhost:3000/v1/contacts?firstName=${name}`, function(data) {
 			var obs = `${data[0].isFavorite}`;
-			console.log(obs);
 			var id = `${data[0]._id}`;
 			var nome = `${data[0].firstName}`;
-			console.log(nome);
 			var email = `${data[0].email}`;
-			console.log(email);
 			var sexo = `${data[0].gender}`;
 			var endereco = `${data[0].info.address}`;
 			var comments = `${data[0].info.comments}`;
-			var tr = 'true';
-			var fl = 'false';
-			console.log(id);
+
 			if (obs == 'true') {
+
 				let data = {
 					firstName: nome,
 					email: email,
 					gender: sexo,
-					isFavorite: fl,
+					isFavorite: 'false',
 					info: {
 		                address: endereco,
 		                comments: comments
@@ -86,12 +82,12 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
 				  data: data,
 				  success: alert("atualizado pra false")
 				});
-			} else {
+			} else if (obs == 'false'){
 				let data = {
 					firstName: nome,
 					email: email,
 					gender: sexo,
-					isFavorite: tr,
+					isFavorite: 'true',
 					info: {
 		                address: endereco,
 		                comments: comments
