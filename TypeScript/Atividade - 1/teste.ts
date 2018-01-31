@@ -1,6 +1,6 @@
 import { SexoTipo } from './sexo.enum';
 
-export class contato {
+export class Contato {
 
 	private _nome: string;
 	private _email: string;
@@ -57,8 +57,9 @@ export class contato {
 	}
 	
 	idade (_data: Date): number {
-		let y: number = _data.getFullYear - 2018;
-		return y;
+		let hoje = new Date;
+		let diferenca = _data.getFullYear() - hoje.getFullYear();
+		return diferenca;
 	}
 	
 }
