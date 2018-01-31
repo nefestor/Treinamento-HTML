@@ -1,0 +1,1 @@
+import { Contato } from "teste";
