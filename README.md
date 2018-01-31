@@ -12,3 +12,4 @@ Repositório para treinamento de programação Web na ForLogic.
   - jQuery
   - NodeJS
 - **neDB**
+- **TypeScript**
