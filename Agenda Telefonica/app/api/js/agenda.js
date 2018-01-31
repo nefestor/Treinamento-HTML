@@ -1,4 +1,4 @@
-let handleGetContacts = (data) => { //Pega data (informações) que uma função que retorna 'contatos' e para cada contato de data, incrementa na variável tst uma li com um span dentro (que contém o nome do contato), por fim usa a função append para adicionar texto na ul #teste.
+let handleGetContacts = (data) => { //Pega data que uma função que retorna 'contatos' e para cada contato de data, incrementa na variável tst uma li com um span dentro (que contém o nome do contato), por fim usa a função append para adicionar texto na ul #teste.
 	let tst =  `<tr>
 					<th>Nome</th>
 					<th>Email</th>
@@ -79,8 +79,7 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
 				$.ajax({
 				  url: `http://localhost:3000/v1/contacts/${id}`,
 				  type: 'PUT',
-				  data: data,
-				  success: alert("atualizado pra false")
+				  data: data
 				});
 			} else if (obs == 'false'){
 				let data = {
@@ -96,8 +95,7 @@ let handleGetContacts = (data) => { //Pega data (informações) que uma função
 				$.ajax({
 				  url: `http://localhost:3000/v1/contacts/${id}`,
 				  type: 'PUT',
-				  data: data,
-				  success: alert("atualizado pra true")
+				  data: data
 				});
 			}
 		});
