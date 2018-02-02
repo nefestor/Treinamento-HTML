@@ -13,3 +13,4 @@ Repositório para treinamento de programação Web na ForLogic.
   - NodeJS
 - **neDB**
 - **TypeScript**
+- **Angular**
