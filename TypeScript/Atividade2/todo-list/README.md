@@ -17,7 +17,8 @@ Com todos esses passos realizados, utilize o seu editor favorito (Sublime, VS Co
 5. Prontinho! O projeto já está rodando em sua máquina: http://localhost:4200/
 6. Caso queira finalizar o projeto basta pressionar **CTRL + C** no terminal, a seguinte mensagem irá aparecer: "Deseja finalizar o arquivo em lotes (S/N)?" Pressione **S** e em seguida aperte **ENTER**.
 
-O resultado será algo assim:<img src="https://github.com/nefestor/treinamento-web/blob/master/TypeScript/Atividade2/todo-list/resultado.jpg" style="max-width:100%;display: block;margin-left: auto;margin-right: auto;width: 60%;height: 400px;" width="450" height="350" />
+<p>O resultado será algo assim:</p>
+<img src="https://github.com/nefestor/treinamento-web/blob/master/TypeScript/Atividade2/todo-list/resultado.jpg" style="max-width:100%;display: block;margin-left: auto;margin-right: auto;width: 60%;height: 400px;" width="450" height="350" />
 
 
 Esse projeto foi feito a partir desse [Tutorial](https://github.com/ng-girls/todo-list-tutorial-portuguese/blob/master/SUMMARY.md).
