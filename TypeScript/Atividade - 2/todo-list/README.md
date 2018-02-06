@@ -1,8 +1,19 @@
 # Tutorial
 
-Para fazer uso do projeto e entender seu funcionamento � necessario o uso do framework Angular. Para isso instale o [NodeJS](https://nodejs.org/en/download/)(Interpretador de codigo JS).
-O NodeJS vem com o pacote npm (Gerenciador de pacotes do Node), com o NodeJS instalado em sua maquina vai ser possivel agora a partir do seu prompt de comando usar o utilitario de linha de comando do mesmo. 
+Para fazer uso do projeto e entender seu funcionamento eh necessario o uso do framework Angular. Para isso instale o [NodeJS](https://nodejs.org/en/download/)(Interpretador de codigo JS).
+
+O NodeJS vem com o pacote npm (Gerenciador de pacotes do Node), com o NodeJS instalado em sua maquina vai ser possivel agora, a partir do seu prompt de comando, usar o utilitario de linha de comando do mesmo.
+
 Sendo assim, vamos instalar o Angular CLI. Com o prompt de comandos aberto, digite: npm install -g @angular/cli
+
+Com todos esses passos realizados, utilize o seu editor favorito (Sublime, VS Code, Atom, etc.). Recomendo o Visual Studio Code por ser desenvolvido pela Microsoft e a linguagem que foi utilizada no projeto é a TypeScript, foi desenvolvida pela Microsoft, mantendo assim um elo entre ambos. 
+
+###Tutorial pelo VS Code:
+
+- Abra o projeto com o VS Code
+- Em seguida abra o terminal integrado do VS Code (CTRL +')
+- No termina digite o seguinte comando: ng serve -o (o é a abreviação de open, irá abrir uma página automaticamente no seu navegador.)
+- Prontinho! O projeto já rodando em sua máquina em: http://localhost:4200/
 
 ## TodoList
 
