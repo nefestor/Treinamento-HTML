@@ -1,14 +1,14 @@
-# Tutorial
+<h1>Tutorial de Instalação</h1>
 
 Para fazer uso do projeto e entender seu funcionamento eh necessario o uso do framework Angular. Para isso instale o [NodeJS](https://nodejs.org/en/download/) (Interpretador de codigo JS).
 
-O NodeJS vem com o pacote npm (Gerenciador de pacotes do Node), com o NodeJS instalado em sua maquina vai ser possivel agora, a partir do seu prompt de comando, usar o utilitario de linha de comando do mesmo.
-
+O NodeJS vem com o pacote npm (Gerenciador de pacotes do Node). Com o NodeJS instalado em sua maquina vai ser possivel agora, a partir do seu prompt de comando, usar o utilitario de linha de comando do mesmo.
+  
 Sendo assim, vamos instalar o **Angular CLI**. Com o prompt de comandos aberto, digite: **npm install -g @angular/cli**
 
 Com todos esses passos realizados, utilize o seu editor favorito (Sublime, VS Code, Atom, etc.). Recomendo o **Visual Studio Code** por ser desenvolvido pela Microsoft e a linguagem que foi utilizada no projeto é a **TypeScript**, foi desenvolvida pela Microsoft, mantendo assim um elo entre ambos. 
 
-### Tutorial pelo VS Code:
+<h4>Tutorial pelo VS Code:</h4>
 
 1. Abra o projeto com o VS Code
 2. Em seguida abra o terminal integrado do VS Code (CTRL +')
@@ -20,7 +20,10 @@ Com todos esses passos realizados, utilize o seu editor favorito (Sublime, VS Co
 O resultado será algo assim:
 
 
-<img src="https://github.com/nefestor/treinamento-web/blob/master/TypeScript/Atividade2/todo-list/resultado.jpg" width="250" height="250"/>
+<img src="https://github.com/nefestor/treinamento-web/blob/master/TypeScript/Atividade2/todo-list/resultado.jpg" width="450" height="350" style="display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;"/>
 
 
 Esse projeto foi feito a partir desse [Tutorial](https://github.com/ng-girls/todo-list-tutorial-portuguese/blob/master/SUMMARY.md).
