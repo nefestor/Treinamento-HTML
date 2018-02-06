@@ -6,3 +6,6 @@
 !.vscode/extensions.json
 .history
 /TypeScript/.vscode/*
+/TypeScript/Atividade-2/todo-list/node_modules
+### Node Modules ###
+
