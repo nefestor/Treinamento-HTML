@@ -19,7 +19,7 @@ Com todos esses passos realizados, utilize o seu editor favorito (Sublime, VS Co
 
 O resultado será algo assim:
 
-![alt text](https://imgur.com/a/3HJNk "todo-list")
+![alt text](https://github.com/nefestor/treinamento-web/tree/master/TypeScript/Atividade2/todo-list/resultado.png "todo-list")
 
 ## TodoList
 
