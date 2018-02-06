@@ -1,6 +1,10 @@
-# TutorialPara fazer uso do projeto e entender seu funcionamento é necessário o uso do framework Angular. Para isso começe, primeiramente, instalando o [NodeJS](https://nodejs.org/en/download/) (Interpretador de código JS), o NodeJS vem com o pacote npm (Gerenciador de pacotes do Node), com o NodeJS instalado em sua máquina vai ser possível agora a partir do seu prompt de comando usar o utilitário de linha de comando do mesmo. Sendo assim, vamos instalar o Angular CLI (npm install -g @angular/cli).
+# Tutorial
 
-# TodoList
+Para fazer uso do projeto e entender seu funcionamento ï¿½ necessario o uso do framework Angular. Para isso instale o [NodeJS](https://nodejs.org/en/download/)(Interpretador de codigo JS).
+O NodeJS vem com o pacote npm (Gerenciador de pacotes do Node), com o NodeJS instalado em sua maquina vai ser possivel agora a partir do seu prompt de comando usar o utilitario de linha de comando do mesmo. 
+Sendo assim, vamos instalar o Angular CLI. Com o prompt de comandos aberto, digite: npm install -g @angular/cli
+
+## TodoList
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
 
