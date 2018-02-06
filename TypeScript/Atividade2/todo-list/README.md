@@ -10,10 +10,16 @@ Com todos esses passos realizados, utilize o seu editor favorito (Sublime, VS Co
 
 ### Tutorial pelo VS Code:
 
-- Abra o projeto com o VS Code
-- Em seguida abra o terminal integrado do VS Code (CTRL +')
-- No termina digite o seguinte comando: ng serve -o (o é a abreviação de open, irá abrir uma página automaticamente no seu navegador.)
-- Prontinho! O projeto já rodando em sua máquina: http://localhost:4200/
+1. Abra o projeto com o VS Code
+2. Em seguida abra o terminal integrado do VS Code (CTRL +')
+3. Digite **npm install** para instalar os módulos necessários para o projeto funcionar corretamente (pode levar alguns minutos).
+4. Por fim, no termina digite o seguinte comando: **ng serve -o** ('o' é a abreviação de open, irá abrir uma página automaticamente no seu navegador.)
+5. Prontinho! O projeto já está rodando em sua máquina: http://localhost:4200/
+6. Caso queira finalizar o projeto basta pressionar **CTRL + C** no terminal, a seguinte mensagem irá aparecer: "Deseja finalizar o arquivo em lotes (S/N)?" Pressione **S** e em seguida aperte **ENTER**.
+
+O resultado será algo assim:
+
+![alt text](https://imgur.com/a/3HJNk "todo-list")
 
 ## TodoList
 
