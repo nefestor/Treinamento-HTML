@@ -1,0 +1,13 @@
+<p>
+	<input #username type="text" placeholder="@ID">
+	<button type="button" (click)="addUser(username?.value)">Adicionar</button>
+</p>
+
+<ul>
+	<li *ngFor="let user of users">
+		<p>ID: {{  user.id }}</p>
+		<p>Nickname: {{ user.name }}</p>
+		<p>Cidade: {{ user.address }}</p>
+		<p *ngIf="user.description">Link Perfil: {{ user.description }} </p>
+	</li>
+</ul>

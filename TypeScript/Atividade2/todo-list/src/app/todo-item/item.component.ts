@@ -4,19 +4,19 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   selector: 'todo-item',
   template: `
     <div class="todoItem">
-    <input type="checkbox" (click)="completeItem()"/>
+      <input type="checkbox" (click)="completeItem()"/>
 
-    <span [hidden]="editing"
-          (click)="editItem()" class="todo-title" [ngClass]="{'todo-complete': isComplete}">{{ item.title }}</span>
+      <span [hidden]="editing"
+            (click)="editItem()" class="todo-title" [ngClass]="{'todo-complete': isComplete}">{{ item.title }}</span>
 
-    <todo-input [hidden]="!editing"
-                [title]="item.title"
-                (submit)="changeItemTitle($event)" (cancel)="cancelEdit($event)">
-    </todo-input>
+      <todo-input [hidden]="!editing"
+                  [title]="item.title"
+                  (submit)="changeItemTitle($event)" (cancel)="cancelEdit($event)">
+      </todo-input>
 
-    <button class="btn btnRed" (click)="removeItem()">
-      Remover
-    </button>
+      <button class="btn btnRed" (click)="removeItem()">
+        Remover
+      </button>
     </div>
   `,
   styleUrls: ['./item.component.css']
