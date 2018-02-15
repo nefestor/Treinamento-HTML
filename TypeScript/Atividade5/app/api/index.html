@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Agenda Telefônica JavaScript</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://use.fontawesome.com/ad5b7f7765.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Lobster|Supermercado+One" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#"><i class="fa fa-home" aria-hidden="true"></i>Início</a></li>
+				<li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>Agenda</a></li>
+				<li><a href="#"><i class="fa fa-info" aria-hidden="true"></i>Ajuda</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="container">
+		<div class="titulo">
+			<h1>Agenda Telefônica</h1>
+		</div>
+		<div class="formulario">
+			<form>
+				<ul>
+					<li>
+						<label for="nome">Nome*:<br>
+							<input type="text" id="nome" name="nome"/>
+						</label>
+					</li>
+					<li>
+						<label for="email">Email*:<br>
+							<input type="text" id="email" name="email"/>
+						</label>
+					</li>
+					<li>
+						<label for="sexo">Sexo:<br>
+							<input type="text" id="sexo" name="sexo"/>
+						</label>
+					</li>
+					<li>
+						<label for="endereco">Endereço:<br>
+							<input type="text" id="endereco" name="endereco"/>
+						</label>
+					</li>
+					<li>
+						<label for="obs">Observações:<br>
+							<input type="text" id="obs" name="obs"/>
+						</label>
+					</li>
+				</ul>
+			</form>
+		</div>
+		<div class="menu">
+			<ul>
+				<li><button type="submit" id="cadastrar">Cadastrar</button></li>
+			</ul>
+			<ul>
+				<li>
+					<label for="id">ID:<br>
+						<input type="text" id="id" name="id">
+					</label>
+				</li>
+				<li><button type="submit" id="editar">Editar</button></li>
+				<li><button type="submit" id="excluir">Excluir</button></li>
+				<li><button type="submit" id="procurar">Localizar</button></li>
+			</ul>
+			<ul>
+				<li><button type="submit" id="listar">Listar Agenda</button></li>
+				<li><button type="submit" id="favoritos">Listar Favoritos</button></li>
+			</ul>
+			<ul>
+				<li><button type="submit" id="exportar">Exportar Agenda</button></li>
+				<li><button type="submit" id="limpar">Limpar Campo</button></li>
+			</ul>
+		</div>
+		<div class="list" id="lista">
+			<table id="teste">
+			</table>
+		</div>
+		<div class="comentarios">
+			<p id="coments"></p>
+		</div>
+	</div>
+	<footer>
+		<h3>© Tiago Pereira - 2018</h3>
+	</footer>
+	<script language="JavaScript" type="text/javascript" src="js/jquery.js"></script>
+	<script language="JavaScript" type="text/javascript" src="js/agenda.js"></script>
+</body>
+</html>
