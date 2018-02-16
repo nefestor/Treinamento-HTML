@@ -1,10 +1,15 @@
 # simple-api
  
- Restful JSON API using neDB and Node.js
-
+ Restful JSON API using neDB and Node.js in <a href="https://lgmf-simple-api.herokuapp.com/v1" target="_blank">HERE</a>
+ 
 ## setting the API
+  ```
     -- git clone https://github.com/lgmf/simple-api.git
-    -- npm install
-    -- npm start
-    -- Acesse http://localhost:3000/v1
+    -- cd simple-api
+    -- npm install --save
+    -- npm run dev
+    -- acesse: localhost:3000/v1
+  ```
+
+
     

@@ -1,13 +1,13 @@
 const _ = require('lodash');
-const faker = require('faker/locale/pt_BR')
+const faker = require('faker/locale/pt_BR');
 const path = require('path');
 
 let db = require('../../config/database');
-let api = {}
+let api = {};
 
 api.home = (req, res) => {
     res.sendFile(path.join(`${__dirname}/index.html`));
-}
+};
 
 api.insert = (req, res) => {
     let contact = req.body;
@@ -16,29 +16,53 @@ api.insert = (req, res) => {
 
     delete contact._id;
     db.insert(contact, function (err, newDoc) {
-        if (err) return console.log(err);
+        if (err)
+            res.status(500).json({
+                success: false,
+                message: err
+            });
         console.log(`${newDoc._id} success written`);
         res.json(newDoc._id);
     });
 };
 
 api.list = (req, res) => {
-    db.find(req.query).sort({ firstName: 1 }).exec(function (err, doc) {
-        if (err) return console.log(err);
+
+    const search = req.query;
+    const limit = (search.limit) ? parseInt(search.limit) : 10;
+    const skip = (search.page) ? parseInt(search.page) - 1 : 0;
+    const sort = { firstName: 1 };
+
+    //TODO: Sort object from request
+    // const sortBy = (search.propertyName) ? search.propertyName : 'firstName';
+    // const direction = (search.direction) ? search.direction : 1;
+    // Object.defineProperty(sort, propertyName, { value: direction });
+
+    delete search.page;
+    delete search.limit;
+
+    Object.keys(req.query).forEach(key => search[key] = new RegExp(req.query[key], 'i'));
+
+    db.find(search).skip(skip * limit).limit(limit).sort(sort).exec(function (err, doc) {
+        if (err)
+            res.status(500).json({
+                success: false,
+                message: err
+            });
         res.json(doc);
     });
 };
 
 api.update = (req, res) => {
     if (!req.params.identifier)
-        res.json({
+        return res.json({
             success: false,
             message: `parameter identifier can not be null`
         });
 
     db.update({ _id: req.params.identifier }, req.body, function (err, numReplaced) {
         if (err)
-            res.json({
+            return res.json({
                 success: false,
                 message: err
             });
@@ -58,14 +82,16 @@ api.update = (req, res) => {
 
 api.remove = (req, res) => {
     if (!req.params.identifier)
-        res.json({
+        return res.json({
             success: false,
             message: `parameter identifier can not be null`
         });
 
-    db.remove({ _id: req.params.identifier }, {}, function (err, numRemoved) {
+    console.log(req.params.identifier);
+
+    db.remove({ _id: req.params.identifier }, { multi: false }, function (err, numRemoved) {
         if (err)
-            res.json({
+            res.status(500).json({
                 success: false,
                 message: err
             });
@@ -76,7 +102,7 @@ api.remove = (req, res) => {
                 message: `${req.params.identifier} success removed`
             });
 
-        res.status(500).end({
+        res.status(500).json({
             success: false,
             message: `can not find contact ${req.params.identifier}`
         });
@@ -108,8 +134,8 @@ api.search = (req, res) => {
 };
 
 api.generate = (req, res) => {
-    console.log(req.params.count)
-    let count = (req.params.count==null ||req.params.count==undefined) ? 10 : req.params.count;
+    console.log(req.params.count);
+    let count = (req.params.count == null || req.params.count == undefined) ? 10 : req.params.count;
 
     db.remove({}, { multi: true });
 
@@ -127,9 +153,15 @@ api.generate = (req, res) => {
                 "comments": faker.lorem.sentences()
             },
             "isFavorite": faker.random.boolean()
-        }
+        };
         db.insert(contact, function (err, newDoc) {
-            if (err) return console.log(err);
+            if (err)
+                res.status(500).json({
+                    success: false,
+                    message: `generate concts error: ${err}`
+                });
+
+
             console.log('Adicionado com sucesso: ' + newDoc._id);
         });
     });
@@ -138,7 +170,7 @@ api.generate = (req, res) => {
         success: true,
         message: `${count} contacts inserted`
     });
-}
+};
 
 
 module.exports = api;

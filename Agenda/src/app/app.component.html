@@ -1,0 +1,13 @@
+<div fxLayoutWrap fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center">
+    <mat-toolbar color="primary">
+        <button mat-button routerLink="/home">Home</button>
+        <button mat-button routerLink="/login">Login</button>
+        <button mat-button routerLink="/contatos">Contatos</button>
+        <button mat-button [routerLink]="['contato', idContato.value]">Contato ID</button>
+    </mat-toolbar>
+</div>
+<div>
+    <p>Entre com o ID do contato:</p>
+    <input matInput type="text" #idContato />
+</div>
+<router-outlet></router-outlet>
