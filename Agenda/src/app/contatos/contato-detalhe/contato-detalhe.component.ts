@@ -1,7 +1,9 @@
+import {ContatosService} from '../contatos.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-import { ContatosService } from '../contatos/contatos.service';
+
+
 
 
 @Component({
@@ -9,25 +11,28 @@ import { ContatosService } from '../contatos/contatos.service';
   templateUrl: './contato-detalhe.component.html',
   styleUrls: ['./contato-detalhe.component.css']
 })
+
 export class ContatoDetalheComponent implements OnInit {
 
   id: number; 
   inscricao: Subscription;
-  contato: any;
+  contato: any[];
 
   constructor(private route: ActivatedRoute) { 
     //console.log(this.route)
     //this.id = this.route.snapshot.params['id'];
   }
-
+  
   ngOnInit() {
+    
    this.inscricao = this.route.params.subscribe(
       (params: any) => {
-        this.id = params['id'];
+        let id = params['id'];
         
         //Corrigir linha abaixo, não está funcionando. (usar ContatosService)
-        this.contato = this.contato.getContato(this.id);
+        this.contato = this.ContatosService.getContato(id);
       }
+      
     ); //Inscreveu nas mudanças dos parâmetros
   }
   ngOnDestroy() {

@@ -1,34 +1,38 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpModule } from '@angular/http'
+import { FormsModule } from '@angular/forms';
+import { ContatosModule } from './contatos/contato.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { ContatosComponent } from './contatos/contatos.component';
-import { routing } from './app.routing';
+
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { CustomMaterialModule } from './custom-material/custom-material.module';
-import { ContatoDetalheComponent } from './contato-detalhe/contato-detalhe.component';
-import { ContatosService } from './contatos/contatos.service';
+import { AppRoutingModule } from './app.routing.module';
+import { RouterModule } from '@angular/router';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
-    ContatosComponent,
-    ContatoDetalheComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpModule,
     FlexLayoutModule,
     CustomMaterialModule,
-    routing
+    ContatosModule,
+    RouterModule,
+    AppRoutingModule
   ],
-  providers: [ContatosService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
